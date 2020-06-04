@@ -1,5 +1,5 @@
 # Smart Hospitals (Hospital Management System)
-This is a complete hospital managemnt system written in php(Laravel)
+Simple HIS in php(Laravel+AdminLTE2)
 
 ## This has the following features
 * Patient Management
@@ -44,11 +44,9 @@ This is a complete hospital managemnt system written in php(Laravel)
     5)Set the .env File with the relevant configuration
     
     6)Execute the Following Command
-        php artisan generate:key
-        php artisan migrate
-        php artisan serve
-        php artisan db:seed
-    
+        php artisan key:generate
+        php artisan migrate --seed    
+        
     7)There are some accounts already created 
         pw    : 12345678
     
@@ -59,6 +57,3 @@ Every Time You Pull The Repo Perform
     composer update (There will be added new dependencies to the project)
 
 Every Time You Make A Change To The Database Do The Change In The Migrations(Not Directly To The Real Database)
-
-
-# his
