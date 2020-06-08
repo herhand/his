@@ -15,15 +15,13 @@ class ClinicPatient extends Migration
     {
         Schema::create('clinic_patient', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // $table->bigInteger('patients_id');
-            // $table->foreign('patients_id')->references('id')->on('patient');
-            $table->bigInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->bigInteger('patients_id');
+            $table->foreign('patients_id')->references('id')->on('patients');
             $table->bigInteger('clinic_id')->unsigned()->index();
             $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->timestamps();
         });
-        DB::unprepared('ALTER TABLE clinic_patient ADD UNIQUE KEY(`patient_id`,`clinic_id`)');
+        DB::unprepared('ALTER TABLE clinic_patient ADD UNIQUE KEY(`patients_id`,`clinic_id`)');
     }
 
     /**
